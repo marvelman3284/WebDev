@@ -30,7 +30,7 @@ function scrollActive(){
 
     sections.forEach(current =>{
         const sectionHeight = current.offsetHeight
-        const sectionTop = current.offsetTop - 50;
+        const sectionTop = current.offsetTop - 100;
         sectionId = current.getAttribute('id')
 
         if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
@@ -73,3 +73,13 @@ sr.reveal('.contact__subtitle', {})
 sr.reveal('.contact__text', {interval: 200})
 sr.reveal('.contact__input', {delay: 400})
 sr.reveal('.contact__button', {delay: 600})
+
+const submit = document.getElementById('submit')
+const body = document.getElementById('body').value
+const subject = document.getElementById('subject').value
+
+submit.onclick = () => {
+    console.log(body.value)
+    console.log("clicked")
+    // window.open(`mailto:jeevandshah@gmail.com?subject=${subject}&body=${body}`)
+}
